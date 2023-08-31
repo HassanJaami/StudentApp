@@ -1,0 +1,35 @@
+﻿@model List<StudentApp.Models.Student>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <h1 class="text-center bg-black text-white">Student Information</h1>
+   <table class=" table table-striped table-hover table-striped">
+        <thead>
+            <tr>            <th>ID</th>
+            <th>Name</th>
+            <th>CGPA</th>
+            <th>Semester</th>
+            <th></th>
+            </tr>
+
+        </thead>
+        @foreach (StudentApp.Models.Student student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.CGPA</td>
+                <td>@student.Semester</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@student.Id">Details</a>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@student.Id">Edit</a>
+                <a class="btn btn-danger" asp-action="Remove" asp-route-id="@student.Id">Remove</a>
+                </td>
+            </tr>
+
+        }
+    </table>
+

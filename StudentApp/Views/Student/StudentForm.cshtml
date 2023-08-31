@@ -1,0 +1,29 @@
+﻿@using StudentApp.Models
+@model Student
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <h5 class="bg-dark text-white text-center p-2">Add Student</h5>
+    <form action="/Student/StudentForm" method="POST">
+
+        <!--<label class="form-label" asp-for="Id"></label><br />
+    <input class="form-control" asp-for="Id"><br />-->
+
+    <label class="form-label" asp-for="Name"></label><br />
+    <input class="form-control" asp-for="Name"><br />
+
+    <label class="form-label" asp-for="CGPA"></label><br />
+    <input class="form-control" asp-for="CGPA"><br />
+
+    <label class="form-label" asp-for="Semester"></label><br />
+    <input class="form-control" asp-for="Semester"><br />
+
+        <input class="btn btn-dark" type="submit" value="Add Student">
+    </form>
+
+
